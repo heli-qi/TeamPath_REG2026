@@ -1,0 +1,31 @@
+[
+    {
+        "socket": {
+            "slug": "visual-context-question",
+            "relative_path": "visual-context-question.json",
+            "example_value": "Example String",
+            "is_image_kind": false,
+            "is_panimg_kind": false,
+            "is_dicom_image_kind": false,
+            "is_json_kind": true,
+            "is_file_kind": false
+        },
+        "file": null,
+        "image": null,
+        "value": "Example String"
+    },
+    {
+        "socket": {
+            "slug": "histopathology-region-of-interest-thumbnail",
+            "relative_path": "histopathology-region-of-interest-thumbnail.jpeg",
+            "is_image_kind": false,
+            "is_panimg_kind": false,
+            "is_dicom_image_kind": false,
+            "is_json_kind": false,
+            "is_file_kind": true
+        },
+        "file": "https://grand-challenge.org/media/some-link/histopathology-region-of-interest-thumbnail.jpeg",
+        "image": null,
+        "value": null
+    }
+]

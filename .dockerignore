@@ -1,0 +1,5 @@
+test/
+dryrun.py
+make_canonical.py
+*.log
+reg2026_staging

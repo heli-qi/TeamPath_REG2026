@@ -1,0 +1,11 @@
+# Test outputs are generated locally and should not be committed
+test/output/
+
+# Model weights — local only; pack with do_save.sh as model.tar.gz (README stays tracked)
+model/*
+!model/README.md
+
+# Export artefacts produced by do_save.sh
+*.tar.gz
+__pycache__/
+*.pyc

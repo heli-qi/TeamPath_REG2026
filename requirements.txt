@@ -1,0 +1,13 @@
+numpy
+Pillow
+opencv-python-headless
+tifffile==2024.8.30
+imagecodecs
+zarr<3
+timm
+h5py
+huggingface_hub
+safetensors
+pyyaml
+transformers==5.6.0
+accelerate
