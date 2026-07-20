@@ -72,14 +72,13 @@ Whole-slide image → chain-of-thought + final pathology report.
 2. **Feature extraction** (`src/reg/uni2.py`) — each patch is embedded by **UNI2-h**
    (timm `vit_giant_patch14_224`, SwiGLU, 8 register tokens, 1536-d, fp16).
 3. **Organ prediction** (`src/reg/cot_infer.py`) — multinomial logistic regression over pooled
-   (mean‖max‖std) features, exported as pure NumPy in `organ_clf_1024.npz`. The predicted organ
-   conditions the MIL heads via FiLM and selects the routing table — no ground truth is used.
-4. **None-aware TransMIL ensemble** (`src/reg/mil.py`, `src/reg/cot_infer.py`) — 10 models
-   (5 seeds × {20x, 10x}), softmax-averaged, with `diagnosis == "None"` predictions dropped.
-   85 classification heads cover the directly predictable questions, one answer each.
-5. **Rule-based derivation** (`src/reg/derive_heads.py`) — fills in the questions the heads do not
-   predict, deriving them from the ones they do (Gleason score → grade group, Nottingham
-   sub-scores → overall grade, differentiation, worst grade pattern, and others).
+   (mean‖max‖std) features. The predicted organ
+   conditions the MIL heads via FiLM and selects the routing table then.
+4. **TransMIL ensemble** (`src/reg/mil.py`, `src/reg/cot_infer.py`) — Using 10 TransMIL models
+   (trained on same dataset with 5 different seeds × {20x, 10x}), softmax-averaged, to do the classification for every questions.
+   A multi-head design emits one answer per canonical question.
+5. **Rule-based derivation** (`src/reg/derive_heads.py`) — derives dependent answers
+   (Gleason pattern → grade group, Nottingham sub-scores → overall grade, etc.).
 6. **Report generation** (`src/reg/report_gen.py`) — assembles the structured pathology report
    from the answered heads.
 7. **CoT assembly** (`src/reg/cot_infer.py`) — deterministic per-organ traversal over
@@ -87,7 +86,7 @@ Whole-slide image → chain-of-thought + final pathology report.
    `routing_fallback.json` covering unseen states. The final-report node carries the generated
    report and is the chain's only terminal node (the one with an empty `next_question`).
 
-Reported test Metric A of this configuration: **0.8624**.
+Reported test Metric A of this configuration: **Pending**.
 
 ### Interface-0 — Visual Grounding (Metric B)
 
