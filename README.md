@@ -74,8 +74,8 @@ Whole-slide image → chain-of-thought + final pathology report.
 3. **Organ prediction** (`src/reg/cot_infer.py`) — multinomial logistic regression over pooled
    (mean‖max‖std) features. The predicted organ
    conditions the MIL heads via FiLM and selects the routing table then.
-4. **TransMIL ensemble** (`src/reg/mil.py`, `src/reg/cot_infer.py`) — 10 models
-   (5 seeds × {20x, 10x}), softmax-averaged.
+4. **TransMIL ensemble** (`src/reg/mil.py`, `src/reg/cot_infer.py`) — Using 10 TransMIL models
+   (trained on same dataset with 5 different seeds × {20x, 10x}), softmax-averaged, to do the classification for every questions.
    A multi-head design emits one answer per canonical question.
 5. **Rule-based derivation** (`src/reg/derive_heads.py`) — derives dependent answers
    (Gleason pattern → grade group, Nottingham sub-scores → overall grade, etc.).
