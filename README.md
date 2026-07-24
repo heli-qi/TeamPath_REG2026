@@ -1,4 +1,4 @@
-# TeamPath — REG² 2026 (MICCAI) Challenge Submission
+# REG² 2026 (MICCAI) Challenge Submission
 
 Code submission for the **Pathologist REasoning-Guided REport Generation Challenge (REG² 2026)**.
 This repository contains the **inference / container code** used to produce our Test Phase #2
@@ -23,8 +23,6 @@ submission, for both challenge interfaces.
 
 ## Contents
 
-- [Team](#team)
-  - [Team Members](#team-members)
 - [Method](#method)
   - [Interface-1 — Workflow Reasoning (Metric A)](#interface-1--workflow-reasoning-metric-a)
   - [Interface-0 — Visual Grounding (Metric B)](#interface-0--visual-grounding-metric-b)
@@ -38,21 +36,7 @@ submission, for both challenge interfaces.
 
 ## Team
 
-| Field | Value |
-|---|---|
-| **Team Name** | TeamPath |
-| **Primary Participant** | Tianyu Liu |
-
-### Team Members
-
-| Name | Grand Challenge Username | Grand Challenge Profile URL |
-|---|---|---|
-| Tianyu Liu | `superyalecbb` | https://grand-challenge.org/users/superyalecbb/ |
-| Weihao Xuan | `weihao1115` | https://grand-challenge.org/users/weihao1115/ |
-| Heli Qi | `qiheli` | https://grand-challenge.org/users/qiheli/ |
-| Zeqi Zhou | `JZZQ` | https://grand-challenge.org/users/JZZQ/ |
-| Dingyuan Dai | `Dingyuan` | https://grand-challenge.org/users/Dingyuan/ |
-| Xitong Ling | `Tobycat` | https://grand-challenge.org/users/Tobycat/ |
+*Team and author information has been removed for double-blind review.*
 
 ---
 
@@ -111,7 +95,7 @@ archive that unpacks directly into `model/`.
 
 | | |
 |---|---|
-| **Host** | https://huggingface.co/weihao1115/TeamPath_REG2026 |
+| **Host** | *(anonymized model host — omitted for double-blind review)* |
 | **File** | `model_v1_hybrid_alldata.tar.gz` (4.1 GB) |
 
 The repository is public — **no token and no access request are needed**.
@@ -123,7 +107,7 @@ The archive is **4.1 GB** and unpacks to roughly the same again, so allow **~9 G
 
 ```bash
 curl -fL -o model_v1_hybrid_alldata.tar.gz \
-  https://huggingface.co/weihao1115/TeamPath_REG2026/resolve/main/model_v1_hybrid_alldata.tar.gz
+  <ANONYMIZED_MODEL_HOST>/model_v1_hybrid_alldata.tar.gz
 
 tar -xzf model_v1_hybrid_alldata.tar.gz -C model/
 rm model_v1_hybrid_alldata.tar.gz
@@ -136,7 +120,7 @@ Equivalently, with the Hugging Face CLI:
 
 ```bash
 pip install -U "huggingface_hub[cli]"
-hf download weihao1115/TeamPath_REG2026 model_v1_hybrid_alldata.tar.gz \
+hf download <ANONYMIZED_HF_REPO> model_v1_hybrid_alldata.tar.gz \
   --repo-type model --local-dir .
 tar -xzf model_v1_hybrid_alldata.tar.gz -C model/
 rm model_v1_hybrid_alldata.tar.gz
@@ -227,8 +211,8 @@ Note that `do_test_run.sh` silently falls back to CPU when it cannot find workin
 with a CUDA error.
 
 ```bash
-git clone https://github.com/heli-qi/TeamPath_REG2026.git
-cd TeamPath_REG2026
+git clone <ANONYMIZED_REPO_URL>
+cd reg2026-submission
 
 # 1. populate model/ as described above
 

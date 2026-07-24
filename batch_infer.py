@@ -15,8 +15,8 @@ os.environ.setdefault("REG_MODEL_PATH", os.path.join(HERE, "model"))
 sys.path.insert(0, HERE)
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--indir", default="/xuanwu-tank/south/MICCAI/test1")
-ap.add_argument("--outdir", default="/xuanwu-tank/south/MICCAI/test1_cot")
+ap.add_argument("--indir", default="/data/MICCAI/test1")
+ap.add_argument("--outdir", default="/data/MICCAI/test1_cot")
 ap.add_argument("--ckpts", default=os.path.join(HERE, "model", "mil_transmil_s0.pt"),
                 help="comma-separated MIL checkpoints; >1 -> softmax ensemble")
 ap.add_argument("--cap", type=int, default=8192)

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Pre-extract the norm->canonical question/next_question map from train_CoT.json so the
 container can emit EXACT canonical strings without shipping the 200MB train_CoT.
-Run on tianyu; writes canonical_questions.json into the submission model/ folder."""
+Run on the training host; writes canonical_questions.json into the submission model/ folder."""
 import json, sys
-BASE = "/xuanwu-tank/south/MICCAI"
+BASE = "/data/MICCAI"
 OUT = sys.argv[1] if len(sys.argv) > 1 else "canonical_questions.json"
 cot = json.load(open(f"{BASE}/train_CoT.json", encoding="utf-8"))
 
