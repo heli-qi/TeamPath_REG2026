@@ -36,26 +36,6 @@ submission, for both challenge interfaces.
 
 ---
 
-## Team
-
-| Field | Value |
-|---|---|
-| **Team Name** | TeamPath |
-| **Primary Participant** | Tianyu Liu |
-
-### Team Members
-
-| Name | Grand Challenge Username | Grand Challenge Profile URL |
-|---|---|---|
-| Tianyu Liu | `superyalecbb` | https://grand-challenge.org/users/superyalecbb/ |
-| Weihao Xuan | `weihao1115` | https://grand-challenge.org/users/weihao1115/ |
-| Heli Qi | `qiheli` | https://grand-challenge.org/users/qiheli/ |
-| Zeqi Zhou | `JZZQ` | https://grand-challenge.org/users/JZZQ/ |
-| Dingyuan Dai | `Dingyuan` | https://grand-challenge.org/users/Dingyuan/ |
-| Xitong Ling | `Tobycat` | https://grand-challenge.org/users/Tobycat/ |
-
----
-
 ## Method
 
 Our submission covers both challenge interfaces with two independent pipelines that share one
